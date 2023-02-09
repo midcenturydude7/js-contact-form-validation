@@ -56,6 +56,23 @@ input:focus {
 }
 
 /**
+  ** [Style rules for social section]
+**/
+
+.or {
+  text-align: center;
+}
+
+.question {
+  font-size: 0.9em;
+}
+
+span {
+  color: #f2796e;
+  cursor: pointer;
+}
+
+/**
   ** [Style rules for form icons]
 **/
 
