@@ -7,8 +7,8 @@ const username = id("username"),
   form = id("form"),
   errorMsg = classes("error"),
   successIcon = classes("success-icon"),
-  failureIcon = classes("failure-icon"),
-  // confirm = classes("confirm");
+  failureIcon = classes("failure-icon");
+// confirm = classes("confirm");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
