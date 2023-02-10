@@ -14,12 +14,47 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.container {
+  display: flex;
+}
+
+/**
+  ** [Style rules for content section]
+**/
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 55%;
+  background-color: #f2796e;
+  min-height: 100vh;
+  padding: 1em 1.5em;
+}
+
+.image {
+  background-image: url("./images/illustration.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 65%;
+}
+
+.text {
+  text-align: center;
+  color: white;
+  font-size: 1.1rem;
+}
+
 /**
   ** [Style rules for form section]
 **/
 
 form {
-  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 45%;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   padding: 1.25em;
 }
@@ -58,6 +93,31 @@ input:focus {
 /**
   ** [Style rules for social section]
 **/
+
+.btn {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.btn-1,
+.btn-2 {
+  width: 100%;
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #c4c4c4;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.75em 0.5em;
+  cursor: pointer;
+}
+
+.btn-2 {
+  background-color: #4f70b5;
+  color: #fff;
+}
 
 .or {
   text-align: center;
@@ -126,3 +186,21 @@ button:hover {
 /**
   ** [Media Queries]
 **/
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  form,
+  .content {
+    width: 100%;
+  }
+
+  .btn {
+    flex-direction: column;
+  }
+
+  .image {
+    height: 70vh;
+  }
+}
