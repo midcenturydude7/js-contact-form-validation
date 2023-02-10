@@ -26,17 +26,17 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 55%;
+  width: 45%;
   background-color: #f2796e;
   min-height: 100vh;
   padding: 1em 1.5em;
 }
 
 .image {
-  background-image: url("./images/illustration.svg");
+  /* background-image: url("./images/illustration.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
+  background-position: center; */
   height: 65%;
 }
 
@@ -54,7 +54,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 45%;
+  width: 55%;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   padding: 1.25em;
 }
@@ -88,6 +88,12 @@ form div {
 input:hover,
 input:focus {
   border: 2px solid #f2796e;
+}
+
+.confirm {
+  margin-top: 2em;
+  text-align: center;
+  opacity: 0;
 }
 
 /**
