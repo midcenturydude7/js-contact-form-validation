@@ -1,3 +1,5 @@
+const emailReg = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/;
+
 const id = (id) => document.getElementById(id);
 const classes = (classes) => document.getElementsByClassName(classes);
 
@@ -7,8 +9,8 @@ const username = id("username"),
   form = id("form"),
   errorMsg = classes("error"),
   successIcon = classes("success-icon"),
-  failureIcon = classes("failure-icon");
-// confirm = classes("confirm");
+  failureIcon = classes("failure-icon"),
+  confirm = classes("confirm");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -32,11 +34,14 @@ const engine = (id, num, message) => {
     errorMsg[num].innerHTML = "";
     failureIcon[num].style.opacity = "0";
     successIcon[num].style.opacity = "1";
+    confirm[num].style.opacity = "1";
+    username.innerHTML = username.placeholder;
   }
 };
 
 const validateEmail = (email, num, message) => {
   const mailformat = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/;
+
   if (email.value.match(mailformat)) {
     errorMsg[num].innerHTML = "";
     failureIcon[num].style.opacity = "0";
@@ -48,8 +53,20 @@ const validateEmail = (email, num, message) => {
   }
 };
 
-// const msgConfirm = (num, message) => {
-//   if (!errorMsg[num].innerHTML !== message) {
-//     confirm.style.opacity = "1";
-//   }
-// };
+function validate(e) {
+  let target = e.target;
+
+  if (target.name === "email") {
+    if (emailReg.test(target.value)) {
+      target.classList.add("valid");
+      target.classList.remove("invalid");
+    } else {
+      target.classList.add("invalid");
+      target.classList.remove("valid");
+    }
+  }
+}
+
+email.addEventListener("input", validate);
+
+console.log(username.placeholder);

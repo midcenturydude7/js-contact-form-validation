@@ -190,6 +190,18 @@ button:hover {
 }
 
 /**
+  ** [Style rules for valid/invalid input]
+**/
+
+.valid {
+  color: #44e444;
+}
+
+.invalid {
+  color: #ff0000;
+}
+
+/**
   ** [Media Queries]
 **/
 @media (max-width: 900px) {
